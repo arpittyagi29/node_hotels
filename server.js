@@ -77,7 +77,7 @@ var _ = require('lodash');
 const fs=require('fs');
 const db=require('./db')
 require('dotenv').config();
-const PORT=process.env.PORT||3000
+const PORT=process.env.PORT
 
 
 const bodyParser = require('body-parser')
