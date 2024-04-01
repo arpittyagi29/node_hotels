@@ -83,21 +83,16 @@ const express = require('express')
 const app = express()
 
 app.use(express.json())
-asd
+
 const personRoutes=require('./Route/personRoutes')
-app.use('/person',personRoutes)
-
-
 const menuRoutes=require('./Route/menuRoutes')
+
+app.use('/person',personRoutes)
 app.use('/menu',menuRoutes)
 
 
 app.get('/', function (req, res) {
    res.send('welcome to hotel')
-})
-
-app.get('/exam', function (req, res) {
-    res.send('Hello World ready for exam ')
 })
 
 
