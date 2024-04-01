@@ -2,7 +2,7 @@ const express=require('express')
 const router=express.Router();
 const Person=require('../models/Person')
 
-//--------------------------------get---------------------------------------//
+//--------------------------------Get---------------------------------------//
 
 router.get('/',async(req,res)=>{
     try{
@@ -14,8 +14,6 @@ router.get('/',async(req,res)=>{
     console.log(err)
     }
     })
-
-
 
 
 router.get('/:workType', async (req,res)=>{
@@ -81,7 +79,7 @@ router.put('/:id',async (req,res)=>{
 })
 
 
-//---------------------Delete-----------------------------------//
+//--------------------------------Delete-----------------------------------//
 
 router.delete('/:id',async(req,res)=>{
     try{

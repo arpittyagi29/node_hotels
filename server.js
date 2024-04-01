@@ -1,4 +1,6 @@
 // const notes=require('./notes.txt')
+
+//H0yCZrWOzCnkn8Mp
 // const { error } = require('console');
 // fs.readFile('./greeting.txt','utf8',(err,data)=>{
 //     if(err){
@@ -74,6 +76,9 @@
 var _ = require('lodash');
 const fs=require('fs');
 const db=require('./db')
+require('dotenv').config();
+const PORT=process.env.PORT||3000
+
 
 const bodyParser = require('body-parser')
 
@@ -96,7 +101,8 @@ app.get('/', function (req, res) {
 })
 
 
-app.listen(3000,()=>{
+
+app.listen(PORT,()=>{
     console.log("Server is listen on 3000")
 })
 
