@@ -63,10 +63,10 @@ Example:
   "name": "John Doe",
   "age": 30,
   "work": "waiter",
-  "mobile": "123-456-7890",
   "email": "john@example.com",
   "address": "123 Main Street",
-  "salary": 30000
+  "salary": 30000,
+  "number":123123
 }
 
 Menu Item
