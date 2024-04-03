@@ -78,10 +78,17 @@ const fs=require('fs');
 const db=require('./db')
 require('dotenv').config();
 const PORT=process.env.PORT
-
+const passport=require('./auth')
 
 const bodyParser = require('body-parser')
 
+//MiddleWare
+
+const logRequest = (req,res,next)=>{
+    console.log(`[${new Date().toLocaleString()}] Request Made to :${req.originalUrl}`)
+    //res.status(200).json({text:"Middle ware passed"})
+    next();
+}
 
 
 const express = require('express')
@@ -92,11 +99,21 @@ app.use(express.json())
 const personRoutes=require('./Route/personRoutes')
 const menuRoutes=require('./Route/menuRoutes')
 
+
+app.use(logRequest)
+
+
+
+
+
+const localAuthMiddleware=passport.authenticate('local',{session:false})
+app.use(passport.initialize());
 app.use('/person',personRoutes)
 app.use('/menu',menuRoutes)
 
 
-app.get('/', function (req, res) {
+
+app.get('/',function (req, res) {
    res.send('welcome to hotel')
 })
 
